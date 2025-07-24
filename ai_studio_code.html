@@ -4248,11 +4248,6 @@ if (!confirm('האם אתה בטוח שברצונך למחוק את כל הנת�
             'gemini-2.5-flash-lite-preview-06-17': 'Gemini Flash lite 2.5 (Preview)',
             'gemini-2.5-flash-preview-05-20': 'Gemini Flash 2.5 (Preview)',
             'gemini-2.0-flash-exp': 'Gemini 2.0 Flash Experimental',
-            'gemini-1.5-flash': 'Gemini 1.5 Flash',
-            'gemini-1.5-flash-8b': 'Gemini 1.5 Flash 8B',
-            'gemini-1.5-pro': 'Gemini 1.5 Pro',
-            'gemini-1.0-pro': 'Gemini 1.0 Pro'
-        };
         return models[modelId] || modelId;
     }
 
@@ -4263,6 +4258,7 @@ if (!confirm('האם אתה בטוח שברצונך למחוק את כל הנת�
             script.async = true;
             script.onload = () => resolve();
             script.onerror = () => reject(new Error('שגיאה בטעינת config.js'));
+      
             document.head.appendChild(script);
         });
     }
