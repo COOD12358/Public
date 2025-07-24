@@ -4106,7 +4106,7 @@ if (!confirm('האם אתה בטוח שברצונך למחוק את כל הנת�
     loadConfigScript() {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
-            script.src = '../config.js'; // הנתיב לקובץ config.js
+            script.src = 'config.js';
             script.async = true;
             script.onload = () => resolve();
             script.onerror = () => reject(new Error('שגיאה בטעינת config.js'));
