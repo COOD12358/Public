@@ -1,0 +1,77 @@
+<div dir="rtl" style="max-width: 500px; margin: 30px auto; text-align: right; font-family: Arial, sans-serif;">
+
+  <div class="tooltip">
+    <div class="brand-box">
+      <span class="icon-left">ⓘ</span>
+      <span class="text">מוצרים רשמיים ופריטים מקוריים</span>
+      <span class="icon-right">✔</span>
+    </div>
+    <span class="tooltiptext">
+      <b>מותג</b><br>
+      המוכר מתחייב שקיבל אישור מותג וחתם על מכתב התחייבות מוצר אמיתי.<br>
+      אלו פריטים ממותגים רשמיים שנמכרים דרך פלטפורמת AliExpress ונרכשים בערוצים לגיטימיים.
+    </span>
+  </div>
+
+</div>
+
+<style>
+.brand-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #fce8d9;
+  border: 1px solid #e0b999;
+  font-size: 14px;
+  color: #5c2b00;
+}
+
+.icon-left {
+  font-size: 14px;
+  color: #8b5e3c;
+}
+
+.icon-right {
+  font-size: 14px;
+  color: #5c2b00;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 280px;
+  background-color: #333;
+  color: #fff;
+  text-align: right;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: -140%;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  direction: rtl;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
