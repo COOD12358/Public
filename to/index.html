@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>האפליקציה שלי</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>הודעה</title>
 </head>
-<body>
-  <h1>ברוך הבא ל-PWA!</h1>
-  <div id="app"></div>
+<body dir="rtl" style="font-family: Arial, sans-serif;">
 
-  <script src="app.js"></script>
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js")
-        .then(() => console.log("Service Worker רשום"))
-        .catch(err => console.error("שגיאה ב-SW:", err));
-    }
-  </script>
+<div id="message"></div>
+
+<script>
+  // פונקציה להוציא פרמטרים מה-URL
+  function getParam(name) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name) || "";
+  }
+
+  // קריאת הפרמטרים
+  const apiPhone = getParam("ApiPhone");
+  const apiDID = getParam("ApiDID");
+  const apiExtension = getParam("ApiExtension");
+  const apiEnterIDName = getParam("ApiEnterIDName");
+  const apiTime = getParam("ApiTime");
+
+  // יצירת ההודעה
+  const message = "id_list_message=t-שלום וברכה, חייגתם ממספר טלפון, " + apiPhone +
+                  ", אל מערכת מספר, " + apiDID +
+                  ", השלוחה בה הינכם ממוקמים כעת היא, " + apiExtension +
+                  ", שמכם הוא, " + apiEnterIDName +
+                  ", השעה כעת היא, " + apiTime +
+                  ", תודה רבה ולהתראות&go_to_folder=hangup";
+
+  // הצגה בדף
+  document.getElementById("message").textContent = message;
+</script>
+
 </body>
 </html>
